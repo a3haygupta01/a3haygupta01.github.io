@@ -1,0 +1,680 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+header{
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo{
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+.logo:hover{
+    transform: scale(1.1);
+}
+nav a{
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+nav a:hover,
+nav a.active{
+    color: #b74b4b;
+    border-bottom: 3px solid #b74b4b;
+}
+@media(max-width:995px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #b74b4b;
+        border-bottom: 3px solid #b74b4b;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+    nav.active{
+        display: block;
+    }
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #b74b4b;
+    }
+}
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: black;
+}
+.home .home-content h1{
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+span{
+    color: #b74b4b;
+}
+.home-content h3{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+.home-content p{
+    font-size: 1.6rem;
+}
+.home-img{
+    border-radius: 50%;
+}
+.home-img img{
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px solid #b74b4b;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+.home-img img:hover{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #b74b4b;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #b74b4b;
+}
+.social-icons a:hover{
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #b74b4b;
+    box-shadow: 0  0 25px #b74b4b;
+}
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #b74b4b;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #b74b4b;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.btn:hover{
+    transform: scale3d(1.03);
+    background-color: #b74b4b;
+    color: black;
+    box-shadow: 0 0 25px #b74b4b;
+}
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+.typing-text span{
+    position: relative;
+}
+.typing-text span::before{
+    content: "software Developer";
+    color: #b74b4b;
+    animation: words 20s infinite;
+}
+.typing-text span::after{
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+@keyframes cursor{
+    to{
+        border-left: 3px solid #b74b4b;
+    }
+}
+@keyframes words{
+    0%, 20%{
+        content: "Web Developer";
+    }
+    21%, 40%{
+        content: "Developer";
+    }
+    41%, 60%{
+        content: "Web Designer";
+    }
+    61%, 80%{
+        content: "Youtuber";
+    }
+    81%, 100%{
+        content: "Script Writer";
+    }
+}
+@media (max-width: 1000px){
+    .home{
+        gap: 4rem;
+    }
+}
+@media(max-width:995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+    .home-content h1{
+        font-size: 5rem;
+    }
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+
+    
+  /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* About Section */
+.about {
+    padding: 50px;
+    position: relative;
+}
+
+.about .content .title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 4rem;
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.about .about-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 80px;
+    gap: 150px; /* Increased spacing between left and right */
+}
+
+/* Left Section - Image */
+.about .about-details .left img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 50%; /* Oval Shape */
+    border: 4px solid red;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+
+/* Right Section - Content */
+.about .about-details .right {
+    flex: 1.5; /* Slightly larger area for the right content */
+}
+
+.about .about-details .right .topic {
+    font-size: 3rem; /* Increased font size for the topic */
+    color: red;
+    font-weight: bold;
+    margin-bottom: 25px; /* Increased spacing between topic and text */
+}
+
+.about .about-details .right p {
+    font-size: 1.8rem; /* Larger font size for the paragraph */
+    line-height: 1.3; /* Better readability */
+    margin-bottom: 30px;
+}
+
+.about .about-details .right .button {
+    text-align: left;
+}
+
+.about .about-details .right .button button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 15px 30px; /* Larger button size */
+    font-size: 1.5rem; /* Larger button text */
+    border-radius: 8px; /* Slightly rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.about .about-details .right .button button:hover {
+    background-color: white;
+    color: red;
+    transform: scale(1.1); /* Larger scale on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Skill Section */
+.skill {
+    padding: 50px;
+    position: relative;
+}
+
+.skill .content .title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 4rem;
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.skill .skill-details {
+    margin-top: 110px;
+}
+
+.skill .skill-details .text {
+    margin-bottom: 30px;
+}
+
+.skill .skill-details .text .topic {
+    font-size: 2.5rem;
+    color: red;
+    margin-bottom: 10px;
+}
+
+.skill .skill-details .text p {
+    line-height: 1.6;
+    font-size: 1.5rem;
+}
+
+.skill .skill-details .experience {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.skill .skill-details .experience .num {
+    font-size: 5rem;
+    font-weight: bold;
+    color: red;
+    margin-right: 10px;
+}
+
+.skill .skill-details .experience .exp {
+    font-size: 2rem;
+}
+
+/* Boxes Styling */
+.skill .skill-details .boxes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Two boxes in each row */
+    gap: 20px;
+}
+
+.skill .skill-details .boxes .box {
+    background-color: #222;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skill .skill-details .boxes .box .topic {
+    font-size: 3rem;
+    font-weight: bold;
+    color: red;
+    margin-bottom: 10px;
+}
+
+.skill .skill-details .boxes .box .per {
+    font-size: 2rem;
+    color: white;
+}
+
+/* Hover Effect */
+.skill .skill-details .boxes .box:hover {
+    transform: scale(1.05);
+    background-color: red;
+    color: black;
+}
+
+.skill .skill-details .boxes .box:hover .topic {
+    color: black;
+}
+
+.skill .skill-details .boxes .box:hover .per {
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Contact Section */
+.contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    gap: 50px;
+}
+
+/* Contact Form */
+.contact .contact-form {
+    flex: 1;
+}
+
+.contact .contact-form h1 {
+    font-size: 3rem;
+    font-style: italic;
+    color: red;
+    margin-bottom: 20px;
+}
+
+.contact .contact-form h1 span {
+    color: white;
+    font-size: 4rem;
+}
+
+.contact .contact-form p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #cccccc;
+}
+
+.contact .contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Separation between form elements */
+}
+
+/* Form Elements - Input & Textarea Styling */
+.contact .contact-form form input,
+.contact .contact-form form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid red;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: white;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effects on Form Fields */
+.contact .contact-form form input:hover,
+.contact .contact-form form textarea:hover {
+    border-color: white; /* White border on hover */
+    background-color: #333333; /* Slightly lighter black background on hover */
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+/* Focus Effects on Form Fields */
+.contact .contact-form form input:focus,
+.contact .contact-form form textarea:focus {
+    border-color: white;
+    background-color: black;
+}
+
+/* Submit Button Styling */
+.contact .contact-form form .btn {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect on Submit Button */
+.contact .contact-form form .btn:hover {
+    background-color: white;
+    color: red;
+    transform: scale(1.05);
+}
+
+/* Contact Image Styling */
+.contact .contact-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .contact-img img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 50%; /* Oval shape */
+    border: 4px solid red;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect on Contact Image */
+.contact .contact-img img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
+}
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*footer-styling*/
+
+footer {
+    background-color: #000; /* Black background */
+    padding: 20px 10px;
+    text-align: center;
+    border-top: 2px solid #ff0000; /* Red border at the top */
+    color: #fff; /* White text */
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+/* Text Styling */
+footer .text {
+    font-size: 2rem;
+    color: #fff; /* White text */
+    margin: 10px;
+}
+
+/* Link Styling */
+footer .text a {
+    color: #ff0000; /* Red color for link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover Effect for Links */
+footer .text a:hover {
+    color: #fff; /* White on hover */
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000; /* Red glow effect */
+}
+
+/* Footer Styling for Small Screens */
+@media (max-width: 768px) {
+    footer {
+        padding: 15px 5px;
+    }
+    footer .text {
+        font-size: 0.9rem;
+    }
+}
